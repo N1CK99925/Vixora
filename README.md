@@ -1,7 +1,10 @@
 # Vixora
-# NEED TO BE CHENGED
-# Vixora is a chatbot made using python with a tkinter GUI, it is trained and programmed to help the remote areas with simple medical issues by suggesting the potential diseases and the ways to fix them 
+ NEED TO BE CHENGED
+ Vixora is a chatbot made using python with a tkinter GUI, it is trained and programmed to help the remote areas with simple medical issues by suggesting the potential diseases and the ways to fix them 
 
+# TECHS USED
+
+TKinter for fronted
 
 # Desclainer
 
