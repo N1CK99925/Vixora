@@ -1,4 +1,4 @@
-import tkinter as tk
+import streamlit as st # type: ignore
 import dialogue as d
 from tkinter import PhotoImage
 import Data as data
@@ -40,6 +40,27 @@ import Data as data
 
 
 
+# Title and Description
+st.title("Vexora - Your Digital Healthcare Assistant")
+st.write("Enter your symptoms below to get initial diagnosis suggestions and health advice.")
+
+# Input Section
+symptoms = st.text_input("Describe your symptoms (e.g., fever, headache, fatigue):")
+
+# Process Symptoms
+if st.button("Get Diagnosis"):
+    if symptoms:
+        # Placeholder logic
+        st.write(f"Analyzing symptoms: {symptoms}")
+        # Example Output
+        st.success("Suggested diagnosis: Common Cold")
+        st.info("Advice: Rest, stay hydrated, and monitor your symptoms.")
+    else:
+        st.warning("Please enter your symptoms to proceed.")
+
+# Footer
+st.write("---")
+st.write("**Disclaimer:** This tool does not replace professional medical advice.")
 
 
 
@@ -54,42 +75,6 @@ import Data as data
 
 
 
-# Create main window
-root = tk.Tk()
-root.title("Vexora")
-root.geometry("400x600")  # Set window size
-blank_icon = PhotoImage(width=1, height=1)  # Provide the path to your icon file
-root.iconphoto(False, blank_icon)
-#Will change the icon later
-# Create text box for the chat display
-chat_display = tk.Text(root, wrap=tk.WORD, height=20, width=50, state=tk.DISABLED)
-chat_display.pack(padx=10, pady=10)
 
 
-user_input = tk.Entry(root, width=50)
-user_input.pack(padx=10, pady=10)
-
-# Function to handle the user's message
-def send_message(event = None):
-    user_message = user_input.get()
-    chat_display.config(state=tk.NORMAL)
-    chat_display.insert(tk.END, "You: " + user_message + "\n")
-    chat_display.config(state=tk.DISABLED)
-    user_input.delete(0, tk.END)  # Clear input field
-
-    # Simulate AI response (replace this with actual AI logic)
-    bot_response = "AI: " + "This is a response for: " + user_message + "\n"
-    chat_display.config(state=tk.NORMAL)
-    chat_display.insert(tk.END, bot_response)
-    chat_display.config(state=tk.DISABLED)
-
-# Button to send the message
-send_button = tk.Button(root, text="Send", command=send_message)
-send_button.pack(padx=10, pady=10)
-
-user_input.bind("<Return>", send_message)
-
-
-# Run the application
-root.mainloop()
 
